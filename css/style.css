@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.primerNav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F3AE5F;
+}
+
+.menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: black;
+    background-color: orange;
+    padding: 8px;
+    border-radius: 12px;
+    border-style: solid;
+}
+
+.bordeRedondeado {
+    border-radius: 100%;
+}
+
+input {
+    width: 35%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+header li {
+    padding: 12px;
+}
+
+.separador {
+    background-color: #ffa9474d;
+}
+
+.footer {
+    padding: 10px;
+    color: white;
+    background-color: #0B87BA;
+    text-align: center;
+}
+
+.enlaces {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.main {
+    background-color: white;
+}
+
+.contenedor {
+    margin: auto;
+    background-color: #F0F4F9;
+    width: 800px;
+    padding: 30px;
+}
+
+.slider {
+    position: relative;
+    width: 800px;
+    height: 400px;
+}
+
+.slider li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: all .5s;
+}
+
+.slider li img {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+}
+
+.slider li:first-child {
+    opacity: 1;
+}
+
+.slider li:target{
+    opacity: 1;
+}
+
+.menuSlider {
+    text-align: center;
+    margin: 20px;
+}
+
+.menuSlider li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menuSlider li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #014D69;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+}
+h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.destacados{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.destacados img{
+    height: 250px;
+    padding: 20px;
+}
+.nombres{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row nowrap;
+}
+.nombres li{
+    width: auto;
+    font-size: large;
+    margin-bottom: 30px;
+}
+.productos{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.productos img{
+    width: 200px;
+    margin-bottom: 40px;
+}
+div h2{
+    margin-top:30px;
+}
+.form input{
+    margin-bottom: 30px;
+}
+.form{
+    text-align: center;
+}
+.form button{
+    width: 400px;
+    height: 40px;
+    background-color: rgba(3, 180, 3, 0.808);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+footer{
+    margin-top: 40px;
+}
+main{
+    height: auto;
+    min-height: 550px;
+}
+.robot{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.robot input{
+width: 60px;
+height: 30px;
+}
+.comentario{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.contacto{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    margin-top: 55px;
+    margin-right: 80px;
+}
+.contacto img{
+    height: 40px;
+    margin-top: 25px;
+}
+.comentario div input{
+    width: 300px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+.comentario div p{
+    margin-left: 50px;
+}
+#comentario{
+    margin-left: 150px;
+    margin-top: 45px;
+}
+#envio{
+    margin: 0;
+    background-color: rgba(3, 180, 3, 0.808);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+button{
+    border-radius: 10px;
+}
+.tienda h2{
+    margin-left: 100px;
+}
