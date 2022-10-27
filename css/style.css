@@ -26,6 +26,10 @@
     text-align: center;
     margin-top: 15px;
 }
+.subtitulo{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
 .barra{
     width: 90%;
     margin: 5%;

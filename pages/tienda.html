@@ -6,91 +6,247 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda | ADN Rosario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../assets/logoADN.jpg" type="image/x-icon">
 </head>
 
-<body>
-    <header>
-        <nav class="primerNav">
-            <a href="../index.html"><img class="bordeRedondeado" height="120px" src="../assets/logoADN.jpg"
-                    alt="Logo ADN"></a>
-            <input type="search" placeholder="Buscar..." name="" id="">
-            <ul class="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./tienda.html">Tienda</a></li>
-                <li><a href="./iniciarSesion.html">Iniciar Sesión</a></li>
-                <li><a href="./registrarse.html">Registrarse</a></li>
-                <li><a href="./contactanos.html">Contactanos</a></li>
-            </ul>
-        </nav>
-        <nav class="separador">
-            <ul class="menu">
-                <li>Ofertas</li>
-                <li>Novedades</li>
-                <li>Alimentos</li>
-                <li>Bebidas</li>
-                <li>Mascotas</li>
-            </ul>
+<body class="body">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img class="imgLogo" height="120rem" src="../assets/logoADN.jpg" alt="Logo ADN">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="./tienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Mi Cuenta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./iniciarSesion.html">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="./registrarse.html">Crear Cuenta</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contactanos.html">Contactanos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 buscador" type="search" placeholder="Buscar"
+                            aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main class="main">
-        <h1>Tienda</h1>
+    <main>
+        <div>
+            <nav>
+                <ul class="nav justify-content-center segundoNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Novedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Comida</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Yerbas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Legumbres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Veganos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Enlatados</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <h1 class="titulo">Tienda</h1>
         <section>
-            <div class="tienda">
-                <h2>Ofertas</h2>
-                <ul class="productos">
-                    <li><img src="../assets/azucar.jpg" alt="azucar"></li>
-                    <li><img src="../assets/garbanzos.jpg" alt="garbanzo"></li>
-                    <li><img src="../assets/lentejas.jpg" alt="lenteja"></li>
-                    <li><img src="../assets/mermelada.jpg" alt="mermelada"></li>
-                </ul>
-                <ul class="nombres">
-                    <li>Azucar Ledesma</li>
-                    <li>Garbanzos</li>
-                    <li>Lentejas</li>
-                    <li>Mermelada Frutilla</li>
-                </ul>
-                <h2>Destacados</h2>
-                <ul class="productos">
-                    <li><img src="../assets/arroz.jpg" alt="arroz"></li>
-                    <li><img src="../assets/dulceDeLeche.jpg" alt="dulce de leche"></li>
-                    <li><img src="../assets/leche.jpg" alt="leche"></li>
-                    <li><img src="../assets/oldPrince.jpg" alt="old prince"></li>
-                </ul>
-                <ul class="nombres">
-                    <li>Arroz Yamani $500 x 1Kg</li>
-                    <li>Dulce de leche $350</li>
-                    <li>Leche en polvo La Lechera $300</li>
-                    <li>Old Prince balanceado $1500</li>
-                </ul>
-                <h2>Bebidas</h2>
-                <ul class="productos">
-                    <li><img src="../assets/agua.jpg" alt="agua"></li>
-                    <li><img src="../assets/manaos.jpg" alt="manaos"></li>
-                    <li><img src="../assets/gatorade.jpg" alt="gatorade"></li>
-                    <li><img src="../assets/gaseosa.jpg" alt="gaseosa"></li>
-                </ul>
-                <ul class="nombres">
-                    <li>Agua Villavicencio</li>
-                    <li>Manaos de Cola</li>
-                    <li>Gatorade</li>
-                    <li>Paso de los toros</li>
-                </ul>
+            <div class="container">
+                <h2 class="subtitulo">Destacados</h2>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/azucar.jpg" class="card-img-top" alt="azucar">
+                            <div class="card-body">
+                                <h5 class="card-title">Azucar Ledesma</h5>
+                                <p class="card-text">$350</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/dulceDeLeche.jpg" class="card-img-top" alt="dulceDeLeche">
+                            <div class="card-body">
+                                <h5 class="card-title">Dulce de Leche</h5>
+                                <p class="card-text">$500</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/leche.jpg" class="card-img-top" alt="leche">
+                            <div class="card-body">
+                                <h5 class="card-title">Leche en polvo</h5>
+                                <p class="card-text">$400</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/oldPrince.jpg" class="card-img-top" alt="oldPrince">
+                            <div class="card-body">
+                                <h5 class="card-title">Old Prince Balanceado</h5>
+                                <p class="card-text">$1899</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="subtitulo">Novedades</h2>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/mermelada.jpg" class="card-img-top" alt="mermelada">
+                            <div class="card-body">
+                                <h5 class="card-title">Mermelada</h5>
+                                <p class="card-text">$540</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/gaseosa.jpg" class="card-img-top" alt="gaseosa">
+                            <div class="card-body">
+                                <h5 class="card-title">Paso de los toros</h5>
+                                <p class="card-text">$180</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/barrasDeCereal.jpg" class="card-img-top" alt="barras de cereal">
+                            <div class="card-body">
+                                <h5 class="card-title">Cereal Mix</h5>
+                                <p class="card-text">$140</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/gatorade.jpg" class="card-img-top" alt="gatorade">
+                            <div class="card-body">
+                                <h5 class="card-title">Gatorade</h5>
+                                <p class="card-text">$350</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="subtitulo">Comida</h2>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/garbanzos.jpg" class="card-img-top" alt="garbanzos">
+                            <div class="card-body">
+                                <h5 class="card-title">Garbanzos</h5>
+                                <p class="card-text">$420</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/arroz.jpg" class="card-img-top" alt="arroz">
+                            <div class="card-body">
+                                <h5 class="card-title">Arroz</h5>
+                                <p class="card-text">$350</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/lentejas.jpg" class="card-img-top" alt="lentejas">
+                            <div class="card-body">
+                                <h5 class="card-title">Lentejas</h5>
+                                <p class="card-text">$480</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card" style="width: 16rem;">
+                            <img src="../assets/productos/fideos.jpg" class="card-img-top" alt="fideos">
+                            <div class="card-body">
+                                <h5 class="card-title">Fideos Integrales</h5>
+                                <p class="card-text">$150</p>
+                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <ul class="enlaces">
-            <li><a href="https://www.instagram.com/adnalmacendietetico/"><img height="50px" src="../assets/instagram.svg" alt="Logo Instagram"></a></li>
-            <li><a href="https://web.whatsapp.com/"><img height="50px" src="../assets/whatsapp.svg" alt="Logo Whatsapp"></a></li>
-            <li><a href="tel:+543411234567"><img height="50px" src="../assets/phone-solid.svg" alt="Celular"></a></li>
-            <li><a href="https://mail.google.com/"><img height="50px" src="../assets/envelope-regular.svg" alt="E-mail"></a></li>
-        </ul>
-        <p>Copyright ADN Almacén Dietético Natual Rosario - 2022. Todos los derechos reservados. Defensa de las y los consumidores.</p>
+        <hr class="barra">
+        <div class="pie">
+            <p>Copyright ADN Almacén Dietético Natual Rosario - 2022. Todos los derechos reservados. Defensa de las y los consumidores.</p>
+            <ul class="iconos">
+                <li><a href="https://www.instagram.com/adnalmacendietetico/"><img height="40px" src="../assets/instagram.svg" alt="Logo Instagram"></a></li>
+                <li><a href="https://web.whatsapp.com/"><img height="40px" src="../assets/whatsapp.svg" alt="Logo Whatsapp"></a></li>
+                <li><a href="tel:+543411234567"><img height="40px" src="../assets/phone-solid.svg" alt="Celular"></a></li>
+                <li><a href="https://mail.google.com/"><img height="40px" src="../assets/envelope-regular.svg" alt="E-mail"></a></li>
+            </ul>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>
