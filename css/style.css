@@ -24,7 +24,7 @@
 }
 .titulo{
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .subtitulo{
     margin-top: 2rem;
@@ -53,4 +53,17 @@
     margin-top: 80px;
     padding-top: 2rem;
     background-color: cornflowerblue;
+}
+.input{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+.form{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.pregunta{
+    text-align: center;
+    margin-bottom: 10rem;
 }

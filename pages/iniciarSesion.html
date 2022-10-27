@@ -6,65 +6,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión | ADN Rosario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../assets/logoADN.jpg" type="image/x-icon">
 </head>
 
-<body>
-    <header>
-        <nav class="primerNav">
-            <a href="../index.html"><img class="bordeRedondeado" height="120px" src="../assets/logoADN.jpg"
-                    alt="Logo ADN"></a>
-            <input type="search" placeholder="Buscar..." name="" id="">
-            <ul class="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./tienda.html">Tienda</a></li>
-                <li><a href="./iniciarSesion.html">Iniciar Sesión</a></li>
-                <li><a href="./registrarse.html">Registrarse</a></li>
-                <li><a href="./contactanos.html">Contactanos</a></li>
-            </ul>
-        </nav>
-        <nav class="separador">
-            <ul class="menu">
-                <li>Ofertas</li>
-                <li>Novedades</li>
-                <li>Alimentos</li>
-                <li>Bebidas</li>
-                <li>Mascotas</li>
-            </ul>
+<body class="body">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img class="imgLogo" height="120rem" src="../assets/logoADN.jpg" alt="Logo ADN">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./tienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Mi Cuenta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./iniciarSesion.html">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item" href="./registrarse.html">Crear Cuenta</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contactanos.html">Contactanos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 buscador" type="search" placeholder="Buscar"
+                            aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
-
-    <main class="main">
+    <main>
+        <div>
+            <nav>
+                <ul class="nav justify-content-center segundoNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Novedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Comida</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Yerbas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Legumbres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Veganos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Enlatados</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <section>
-            <h1>Iniciar Sesión</h1>
-            <form>
-                <div class="form">
-                    <p>E-mail</p>
-                    <input placeholder="e-mail@gmail.com" type="email" name="" id="">
-                    <p>Contraseña</p>
-                    <input placeholder="********" type="password" name="" id="">
-                    <p>¿Olvidaste tu contraseña?</p>
-                    <button type="submit">Iniciar Sesión</button>
-                    <p>¿No tienes una cuenta? <a href="./registrarse.html">Crear cuenta</a></p>
+            <h1 class="titulo">Iniciar Sesión</h1>
+            <form class="form">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control input" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
                 </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control input" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <input type="checkbox" name="" id="recordar">
+                <label for="recordar">Recordarme</label>
+                <button type="submit" class="btn btn-outline-success input">Success</button>
+                <p class="pregunta">¿Aún no tienes una cuenta? <a href="./registrarse.html">Crear Cuenta</a></p>
             </form>
         </section>
     </main>
 
     <footer class="footer">
-        <ul class="enlaces">
-            <li><a href="https://www.instagram.com/adnalmacendietetico/"><img height="50px"
-                        src="../assets/instagram.svg" alt="Logo Instagram"></a></li>
-            <li><a href="https://web.whatsapp.com/"><img height="50px" src="../assets/whatsapp.svg"
-                        alt="Logo Whatsapp"></a></li>
-            <li><a href="tel:+543411234567"><img height="50px" src="../assets/phone-solid.svg" alt="Celular"></a></li>
-            <li><a href="https://mail.google.com/"><img height="50px" src="../assets/envelope-regular.svg"
-                        alt="E-mail"></a></li>
-        </ul>
-        <p>Copyright ADN Almacén Dietético Natual Rosario - 2022. Todos los derechos reservados. Defensa de las y los
-            consumidores.</p>
+        <hr class="barra">
+        <div class="pie">
+            <p>Copyright ADN Almacén Dietético Natual Rosario - 2022. Todos los derechos reservados. Defensa de las y los consumidores.</p>
+            <ul class="iconos">
+                <li><a href="https://www.instagram.com/adnalmacendietetico/"><img height="40px" src="../assets/instagram.svg" alt="Logo Instagram"></a></li>
+                <li><a href="https://web.whatsapp.com/"><img height="40px" src="../assets/whatsapp.svg" alt="Logo Whatsapp"></a></li>
+                <li><a href="tel:+543411234567"><img height="40px" src="../assets/phone-solid.svg" alt="Celular"></a></li>
+                <li><a href="https://mail.google.com/"><img height="40px" src="../assets/envelope-regular.svg" alt="E-mail"></a></li>
+            </ul>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
