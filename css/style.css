@@ -10,7 +10,7 @@
     border-radius: 100%;
 }
 .buscador{
-    width: 300px;
+    width: 250px;
     border-color: rgba(0, 0, 0, 0.486);
 }
 .segundoNav{
@@ -18,4 +18,35 @@
 }
 .segundoNav li a{
     color: black;
+}
+.body{
+    background-color: beige;
+}
+.titulo{
+    text-align: center;
+    margin-top: 15px;
+}
+.barra{
+    width: 90%;
+    margin: 5%;
+    margin-top: 0;
+    margin-bottom: 2%;
+}
+.pie{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.iconos{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+.iconos li img{
+    margin-left: 15px;
+}
+.footer{
+    margin-top: 80px;
+    padding-top: 2rem;
+    background-color: cornflowerblue;
 }
