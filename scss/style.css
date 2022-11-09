@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header {
+  background-color: rgba(255, 166, 0, 0.829);
+}
+
+.imgLogo {
+  border-radius: 100%;
+}
+
+.buscador {
+  width: 20rem;
+  border-color: rgba(0, 0, 0, 0.486);
+}
+
+.segundoNav {
+  background-color: #fee997;
+}
+.segundoNav li a {
+  color: black;
+}
+
+.body {
+  background-color: beige;
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subtitulo {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.barra {
+  width: 90%;
+  margin: 5%;
+  margin-top: 0;
+  margin-bottom: 2%;
+}
+
+.pie {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.iconos {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+.iconos li img {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 2rem;
+}
+
+.footer {
+  margin-top: 7rem;
+  padding-top: 2rem;
+  background-color: cornflowerblue;
+}
+
+.input {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.boton {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.form-check {
+  margin-top: 1rem;
+}
+
+.pregunta {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.enviar {
+  width: 50%;
+  margin: 0 25% 0 25%;
+}/*# sourceMappingURL=style.css.map */

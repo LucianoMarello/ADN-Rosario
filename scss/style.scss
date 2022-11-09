@@ -10,14 +10,16 @@
     border-radius: 100%;
 }
 .buscador{
-    width: 250px;
+    width: 20rem;
     border-color: rgba(0, 0, 0, 0.486);
 }
 .segundoNav{
     background-color: #fee997;
-}
-.segundoNav li a{
-    color: black;
+    li{
+        a{
+            color: black;
+        }
+    }
 }
 .body{
     background-color: beige;
@@ -46,11 +48,13 @@
     display: flex;
     flex-flow: row wrap;
     align-content: center;
-}
-.iconos li img{
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 2rem;
+    li{
+        img{
+            margin-left: 1rem;
+            margin-right: 1rem;
+            height: 2rem;
+        }
+    }
 }
 .footer{
     margin-top: 7rem;
