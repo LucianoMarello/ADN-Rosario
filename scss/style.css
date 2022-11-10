@@ -23,6 +23,9 @@
 .segundoNav li a {
   color: black;
 }
+.segundoNav li a:hover {
+  color: grey;
+}
 
 .body {
   background-color: beige;
@@ -98,4 +101,12 @@
 .enviar {
   width: 50%;
   margin: 0 25% 0 25%;
+}
+
+.card img {
+  scale: 0.8;
+  transition: all 300ms;
+}
+.card img:hover {
+  transform: scale(1.2);
 }/*# sourceMappingURL=style.css.map */
