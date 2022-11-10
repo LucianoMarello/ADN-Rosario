@@ -109,4 +109,13 @@
 }
 .card img:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 991px) {
+  .buscador {
+    width: 14rem;
+  }
+  .card {
+    margin-bottom: 1.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
