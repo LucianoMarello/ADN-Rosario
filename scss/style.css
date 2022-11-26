@@ -31,6 +31,11 @@
   background-color: beige;
 }
 
+.carousel {
+  width: 88%;
+  margin: 0rem 6%;
+}
+
 .titulo {
   text-align: center;
   margin-top: 2rem;
@@ -124,5 +129,9 @@
   }
   .form {
     margin: 5%;
+  }
+  .carousel {
+    width: 100%;
+    margin: 0rem 0rem;
   }
 }/*# sourceMappingURL=style.css.map */
