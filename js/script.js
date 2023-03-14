@@ -43,7 +43,7 @@ function mostrarCarrito() {
     let mensaje = "PRODUCTOS EN EL CARRITO: ";
     if (carrito.length != 0) {
         for (const producto of carrito) {
-            mensaje += "\n -" + producto.nombre + "  x " + producto.cantidad + " kilo/s";
+            mensaje += "\n -" + producto.nombre + "  x " + producto.cantidad + " kilo/s = "+ (producto.precio*producto.cantidad)+"$";
         }
         alert(mensaje);
     } else {
@@ -52,7 +52,7 @@ function mostrarCarrito() {
 }
 
 // Función para calcular el total de la compra
-function calcularTotal(carrito) {
+function calcularTotal() {
     let total = 0;
     for (const producto of carrito) {
         total += (producto.precio*producto.cantidad);
@@ -108,7 +108,7 @@ mostrarCarrito();
 
 // Verificamos si hay algún producto en el carrito y llamamos a la función para calcular el total si hace falta
 if(carrito.length!=0){
-    let total = calcularTotal(carrito);
+    let total = calcularTotal();
     let control = true
     do{
         let confirmar = prompt("El total de la compra es de "+total+"$ \n\nPara confirmar su compra escriba CONFIRMAR \nPara cancelarla escriba CANCELAR");
