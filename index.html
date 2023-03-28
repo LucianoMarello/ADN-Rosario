@@ -2,16 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta name="description" content="Tienda Online de alimentos naturales, dietéticos, productos orgánicos y cosmética natural.">
+    <meta name="description"
+        content="Tienda Online de alimentos naturales, dietéticos, productos orgánicos y cosmética natural.">
     <meta name="keywords" content="TIENDA, PRODUCTO, ALMACEN, DIETETICA, ORGANICO, ROSARIO, NATURAL">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | ADN Almacén Dietético Natural</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./scss/style.css">
     <link rel="shortcut icon" href="./assets/logoADN.jpg" type="image/x-icon">
     <script defer src="./js/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="body">
@@ -21,7 +27,9 @@
                 <a class="navbar-brand" href="./index.html">
                     <img class="imgLogo" height="120rem" src="./assets/logoADN.jpg" alt="Logo ADN">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,7 +41,8 @@
                             <a class="nav-link" href="./pages/tienda.html">Tienda</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Mi Cuenta
                             </a>
                             <ul class="dropdown-menu">
@@ -131,7 +140,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Azucar Ledesma</h5>
                                 <p class="card-text">$350 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                                <label for="cantidad1">Cantidad:</label>
+                                <input class="cant" type="number" data-id="1" min="0" value="1">
+                                <a class="btn btn-primary boton-agregar" data-id="1">Añadir al carrito</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +152,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Dulce de Leche</h5>
                                 <p class="card-text">$500 x 454g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                                <label for="cantidad2">Cantidad:</label>
+                                <input class="cant" type="number" data-id="2" min="0" value="1">
+                                <a class="btn btn-primary boton-agregar" data-id="2">Añadir al carrito</a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +164,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Leche en polvo</h5>
                                 <p class="card-text">$400 x 800g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                                <label for="cantidad3">Cantidad:</label>
+                                <input class="cant" type="number" data-id="3" min="0" value="1">
+                                <a class="btn btn-primary boton-agregar" data-id="3">Añadir al carrito</a>
                             </div>
                         </div>
                     </div>
@@ -160,12 +175,23 @@
                             <img src="./assets/productos/yerba.jpg" class="card-img-top" alt="yerba">
                             <div class="card-body">
                                 <h5 class="card-title">Yerba Antiácida</h5>
-                                <p class="card-text">$1000 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                                <p class="card-text ">$1000 x 1kg</p>
+                                <label for="cantidad4">Cantidad:</label>
+                                <input class="cant" type="number" data-id="4" min="0" value="1">
+                                <a class="btn btn-primary boton-agregar" data-id="4">Añadir al carrito</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Seccion del carrito -->
+            <div id="carrito">
+                <h2>Carrito</h2>
+                <ul id="lista-carrito">
+                </ul>
+                <p>Total: <span id="total-carrito">0</span></p>
+                <button id="boton-confirmar"> Confirmar compra </button>
+                <button id="vaciar-carrito"> Vaciar Carrito </button>
             </div>
         </section>
     </main>
@@ -175,14 +201,14 @@
         <div class="pie">
             <p>Copyright ADN Almacén Dietético Natural Rosario - 2022. Todos los derechos reservados.</p>
             <ul class="iconos">
-                <li><a href="https://www.instagram.com/adnalmacendietetico/"><img src="./assets/instagram.svg" alt="Logo Instagram"></a></li>
+                <li><a href="https://www.instagram.com/adnalmacendietetico/"><img src="./assets/instagram.svg"
+                            alt="Logo Instagram"></a></li>
                 <li><a href="https://web.whatsapp.com/"><img src="./assets/whatsapp.svg" alt="Logo Whatsapp"></a></li>
                 <li><a href="tel:+543411234567"><img src="./assets/phone-solid.svg" alt="Celular"></a></li>
                 <li><a href="https://mail.google.com/"><img src="./assets/envelope-regular.svg" alt="E-mail"></a></li>
             </ul>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>

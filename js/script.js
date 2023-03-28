@@ -2,125 +2,116 @@
 const productos = [
     {
         id: 1,
-        nombre: "Arroz",
-        precio: 220,
-        cantidad: 0
-    },
-    {
-        id: 2,
-        nombre: "Fideos",
+        nombre: "Azucar Ledesma",
         precio: 350,
         cantidad: 0
     },
     {
-        id: 3,
-        nombre: "Granola",
+        id: 2,
+        nombre: "Dulce de leche",
         precio: 500,
         cantidad: 0
     },
     {
+        id: 3,
+        nombre: "Leche en polvo",
+        precio: 400,
+        cantidad: 0
+    },
+    {
         id: 4,
-        nombre: "Mani",
-        precio: 160,
+        nombre: "Yerba Antiácida",
+        precio: 1000,
         cantidad: 0
     }
 ];
 
-// Creamos el carrito vacío
-const carrito = [];
+// Recuperamos el carrito del localStorage si existe, o lo creamos vacío
+const carritoGuardado = JSON.parse(localStorage.getItem("carrito"));
+const carrito = carritoGuardado ? carritoGuardado : [];
 
-// Crea una lista de los productos
-function enlistarProductos() {
-    let mensaje = "PRODUCTOS DISPONIBLES: \n"
-    for (const producto of productos) {
-        mensaje += "ID: " + producto.id + " - Producto: " + producto.nombre + " - Precio: " + producto.precio + "$ x kg \n";
-    }
-    return mensaje;
-}
+//Obtenemos los elementos del DOM
+const botonAgregar = document.querySelectorAll(".boton-agregar");
+const listaCarrito = document.getElementById("lista-carrito");
+const totalCarrito = document.getElementById("total-carrito");
+const botonConfirmar = document.getElementById("boton-confirmar");
+const botonVaciarCarrito = document.getElementById("vaciar-carrito");
+const cantProductos = document.querySelectorAll(".cant");
 
-// Función para mostrar los productos en el carrito
+//Función para mostrar el contenido del carrito
 function mostrarCarrito() {
-    let mensaje = "PRODUCTOS EN EL CARRITO: ";
-    if (carrito.length != 0) {
-        for (const producto of carrito) {
-            mensaje += "\n -" + producto.nombre + "  x " + producto.cantidad + " kilo/s = "+ (producto.precio*producto.cantidad)+"$";
-        }
-        alert(mensaje);
-    } else {
-        alert("El carrito esta vacío");
+    let htmlCarrito = "";
+    for (const producto of carrito) {
+        htmlCarrito += `<li>${producto.nombre} x ${producto.cantidad} kg = $${producto.precio * producto.cantidad}</li>
+    `;
     }
+    listaCarrito.innerHTML = htmlCarrito;
+    totalCarrito.textContent = calcularTotal();
 }
 
 // Función para calcular el total de la compra
 function calcularTotal() {
     let total = 0;
     for (const producto of carrito) {
-        total += (producto.precio*producto.cantidad);
+        total += (producto.precio * producto.cantidad);
     }
     return total;
 }
 
-// Pregunta que productos quiere comprar el usuario
-let seguirComprando = true;
-let lista = enlistarProductos();
-while (seguirComprando) {
-    let idProducto = parseInt(prompt(lista + "\nIngrese el ID del producto que desea agregar al carrito (0 para finalizar):"));
-    if (idProducto === 0) {
-        seguirComprando = false;
-    } else {
-        const productoEncontrado = productos.find(producto => producto.id === idProducto);
-        // Si el ID ingresado coincide con algún producto, se pregunta la cantidad a comprar y luego se agrega al carrito
-        if (productoEncontrado) {
-            let cantidad = parseInt(prompt("Cuantos kilos de " + productoEncontrado.nombre + " quiere comprar?"));
-            if (isNaN(cantidad)) {
-                alert("Error, ingrese un número.");
-            } else if(cantidad!=0){
-                // Agrega el producto al carrito
-                let encontrado = false;
-                for (i = 0; i < carrito.length; i++) {
-                    // Verifica si el producto ya está incluido en el carrito
-                    if (carrito[i].id === productoEncontrado.id) {
-                        encontrado = true;
-                        break;
-                    }
-                }
-                if (encontrado) {
-                    // Si el producto ya está en el carrito, se le suma la cantidad de kilos deseada
-                    alert("Habia " + carrito[i].cantidad + " kilo/s de " + productoEncontrado.nombre + " y ahora se agregaron " + cantidad + " kilo/s");
-                    carrito[i].cantidad = carrito[i].cantidad + cantidad;
-                    mostrarCarrito();
-                } else { // Si no, se agrega el producto al carrito
-                    alert("Se agregaron " + cantidad + " kilo/s de " + productoEncontrado.nombre);
-                    productoEncontrado.cantidad = cantidad;
-                    carrito.push(productoEncontrado);
-                    mostrarCarrito();
-                }
-            }
-        } else {
-            // Si el ID no coincide con ningún producto, se informa al usuario y vuelva al principio del while
-            alert("No se encontró ningún producto con el ID ingresado.");
+//Función para agregar productos al carrito o aumentar la cantidad que se quiere comprar
+function agregarAlCarrito(evento) {
+    const boton = evento.target;
+    const id = parseInt(boton.dataset.id);
+    const productoEncontrado = productos.find(producto => producto.id === id);
+    if (productoEncontrado) {
+        productoEncontrado.cantidad = cantProductos[id - 1].value;
+        const productoEnCarrito = carrito.find(producto => producto.id === id);
+        if (productoEnCarrito) {
+            productoEnCarrito.cantidad = productoEncontrado.cantidad;
+        } else if (cantProductos[id - 1].value != 0) {
+            carrito.push(productoEncontrado);
         }
     }
+    mostrarCarrito();
+    guardarCarrito();
 }
 
-// Mostramos los productos del carrito al finalizar
-mostrarCarrito();
-
-// Verificamos si hay algún producto en el carrito y llamamos a la función para calcular el total si hace falta
-if(carrito.length!=0){
-    let total = calcularTotal();
-    let control = true
-    do{
-        let confirmar = prompt("El total de la compra es de "+total+"$ \n\nPara confirmar su compra escriba CONFIRMAR \nPara cancelarla escriba CANCELAR");
-        //Pedimos confirmación de la compra
-        if(confirmar.toUpperCase()==="CONFIRMAR"){
-            alert("Su pedido ha sido confirmardo. Muchas gracias por su compra!");
-            control=false;
-        }else if(confirmar.toUpperCase()==="CANCELAR"){
-            alert("Su compra ha sido cancelada.");
-            control=false;
-        }else{
-            alert("Por favor, escriba CONFIRMAR o CANCELAR");
-        }
-    }while(control)
+// Función para guardar el carrito de compra en LocalStorage
+function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
+
+//Función para comfirmar la compra
+function confirmarCompra() {
+    if(carrito.length!=0){
+        Swal.fire({
+            title: "Compra Realizada",
+            text: "Total de compra: $"+calcularTotal(),
+            icon: "success",
+            confirmButtonText: "Continuar"
+        })
+    }
+    carrito.length = 0;
+    //Borramos el carrito de localStorage
+    localStorage.removeItem("carrito");
+    mostrarCarrito();
+}
+
+//Función para vaciar el carrito
+function vaciarCarrito() {
+    carrito.length = 0;
+    // Borramos el carrito de localStorage
+    localStorage.removeItem("carrito");
+    mostrarCarrito();
+}
+
+botonAgregar.forEach(boton => {
+    boton.addEventListener("click", agregarAlCarrito);
+});
+botonConfirmar.addEventListener("click", confirmarCompra);
+botonVaciarCarrito.addEventListener('click', vaciarCarrito);
+
+//Mostrar el carrito cuando se recargue la página
+window.addEventListener("load", () => {
+    mostrarCarrito();
+});
