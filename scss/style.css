@@ -3,6 +3,11 @@
   padding: 0;
   list-style: none;
 }
+* input[type=number]::-webkit-inner-spin-button,
+* input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .header {
   background-color: rgba(255, 166, 0, 0.829);
@@ -134,11 +139,16 @@
     width: 100%;
     margin: 0rem 0rem;
   }
+  #carrito {
+    text-align: center;
+    margin: 6%;
+  }
 }
-.boton-agregar {
-  margin-top: 1rem;
-}
-
 .cant {
   width: 4rem;
+}
+
+#carrito {
+  margin-left: 6%;
+  margin-top: 2rem;
 }/*# sourceMappingURL=style.css.map */

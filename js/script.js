@@ -1,117 +1,167 @@
-// Definimos los productos disponibles
-const productos = [
-    {
-        id: 1,
-        nombre: "Azucar Ledesma",
-        precio: 350,
-        cantidad: 0
-    },
-    {
-        id: 2,
-        nombre: "Dulce de leche",
-        precio: 500,
-        cantidad: 0
-    },
-    {
-        id: 3,
-        nombre: "Leche en polvo",
-        precio: 400,
-        cantidad: 0
-    },
-    {
-        id: 4,
-        nombre: "Yerba Antiácida",
-        precio: 1000,
-        cantidad: 0
-    }
-];
-
-// Recuperamos el carrito del localStorage si existe, o lo creamos vacío
-const carritoGuardado = JSON.parse(localStorage.getItem("carrito"));
-const carrito = carritoGuardado ? carritoGuardado : [];
+//Recuperamos el carrito del localStorage si existe, o lo creamos vacío
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //Obtenemos los elementos del DOM
-const botonAgregar = document.querySelectorAll(".boton-agregar");
+const cardConteiner = document.getElementById("destacados");
 const listaCarrito = document.getElementById("lista-carrito");
 const totalCarrito = document.getElementById("total-carrito");
 const botonConfirmar = document.getElementById("boton-confirmar");
 const botonVaciarCarrito = document.getElementById("vaciar-carrito");
-const cantProductos = document.querySelectorAll(".cant");
 
-//Función para mostrar el contenido del carrito
-function mostrarCarrito() {
-    let htmlCarrito = "";
-    for (const producto of carrito) {
-        htmlCarrito += `<li>${producto.nombre} x ${producto.cantidad} kg = $${producto.precio * producto.cantidad}</li>
-    `;
-    }
-    listaCarrito.innerHTML = htmlCarrito;
-    totalCarrito.textContent = calcularTotal();
-}
+//Fetch para obtener los datos del JSON local
+fetch("./js/data.json")
+    .then(response => response.json())
+    .then(data => {
+        const productos = data;
 
-// Función para calcular el total de la compra
-function calcularTotal() {
-    let total = 0;
-    for (const producto of carrito) {
-        total += (producto.precio * producto.cantidad);
-    }
-    return total;
-}
-
-//Función para agregar productos al carrito o aumentar la cantidad que se quiere comprar
-function agregarAlCarrito(evento) {
-    const boton = evento.target;
-    const id = parseInt(boton.dataset.id);
-    const productoEncontrado = productos.find(producto => producto.id === id);
-    if (productoEncontrado) {
-        productoEncontrado.cantidad = cantProductos[id - 1].value;
-        const productoEnCarrito = carrito.find(producto => producto.id === id);
-        if (productoEnCarrito) {
-            productoEnCarrito.cantidad = productoEncontrado.cantidad;
-        } else if (cantProductos[id - 1].value != 0) {
-            carrito.push(productoEncontrado);
-        }
-    }
-    mostrarCarrito();
-    guardarCarrito();
-}
-
-// Función para guardar el carrito de compra en LocalStorage
-function guardarCarrito() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
-//Función para comfirmar la compra
-function confirmarCompra() {
-    if(carrito.length!=0){
-        Swal.fire({
-            title: "Compra Realizada",
-            text: "Total de compra: $"+calcularTotal(),
-            icon: "success",
-            confirmButtonText: "Continuar"
+        //Crea las cards de los productos
+        productos.forEach(element => {
+            let card =
+                `<div class="col-lg-3 col-6">
+                    <div class="card" style="width: auto;">
+                        <img src="${element.img}" class="card-img-top" alt="${element.nombre}">
+                        <div class="card-body">
+                            <h5 class="card-title">${element.nombre}</h5>
+                            <p class="card-text">$ ${element.precio} x 1kg</p>
+                            <div class="input-group mb-3">
+                                <button type="button" class="boton-restar btn btn-outline-secondary" data-id="${element.id}"> - </button>
+                                <input class="cant form-control text-center" type="number" data-id="${element.id}" min="1" max="10" value="1">
+                                <button type="button" class="boton-sumar btn btn-outline-secondary" data-id="${element.id}"> + </button>
+                            </div>
+                            <a class="btn btn-primary boton-agregar" data-id="${element.id}">Añadir al carrito</a>
+                        </div>
+                    </div>
+                </div>`
+            cardConteiner.innerHTML += card;
         })
-    }
-    carrito.length = 0;
-    //Borramos el carrito de localStorage
-    localStorage.removeItem("carrito");
-    mostrarCarrito();
-}
 
-//Función para vaciar el carrito
-function vaciarCarrito() {
-    carrito.length = 0;
-    // Borramos el carrito de localStorage
-    localStorage.removeItem("carrito");
-    mostrarCarrito();
-}
+        //Obtenemos los elementos del DOM
+        const botonAgregar = document.querySelectorAll(".boton-agregar");
+        const cantProductos = document.querySelectorAll(".cant");
+        const botonSumar = document.querySelectorAll(".boton-sumar");
+        const botonRestar = document.querySelectorAll(".boton-restar");
 
-botonAgregar.forEach(boton => {
-    boton.addEventListener("click", agregarAlCarrito);
-});
-botonConfirmar.addEventListener("click", confirmarCompra);
-botonVaciarCarrito.addEventListener('click', vaciarCarrito);
+        
+        //Función para mostrar el contenido del carrito
+        function mostrarCarrito() {
+            let htmlCarrito = "";
+            for (const producto of carrito) {
+                htmlCarrito += `<li>
+                ${producto.nombre} x ${producto.cantidad} kg = $${producto.precio * producto.cantidad}
+                <button type="button" class="btn-close" aria-label="Close" data-id="${producto.id}"></button>
+                </li>`;
+            }
+            listaCarrito.innerHTML = htmlCarrito;
+            totalCarrito.textContent = calcularTotal();
+            const botonCerrar = document.querySelectorAll(".btn-close");
+            botonCerrar.forEach(boton => {
+                boton.addEventListener("click", eliminarProducto);
+            });
+        }
 
-//Mostrar el carrito cuando se recargue la página
-window.addEventListener("load", () => {
-    mostrarCarrito();
-});
+        // Función para calcular el total de la compra
+        function calcularTotal() {
+            let total = 0;
+            for (const producto of carrito) {
+                total += (producto.precio * producto.cantidad);
+            }
+            return total;
+        }
+
+        //Función para agregar productos al carrito o aumentar la cantidad que se quiere comprar
+        function agregarAlCarrito(evento) {
+            const boton = evento.target;
+            const id = parseInt(boton.dataset.id);
+            const productoEncontrado = productos.find(producto => producto.id === id);
+            if (productoEncontrado) {
+                productoEncontrado.cantidad = cantProductos[id - 1].value;
+                const productoEnCarrito = carrito.find(producto => producto.id === id);
+                if (productoEnCarrito) {
+                    productoEnCarrito.cantidad = productoEncontrado.cantidad;
+                } else if (cantProductos[id - 1].value != 0) {
+                    carrito.push(productoEncontrado);
+                }
+            }
+            mostrarCarrito();
+            guardarCarrito();
+        }
+
+        //Función para eliminar productos del carrito
+        function eliminarProducto(event){
+            const id = parseInt(event.target.dataset.id);
+            carrito.forEach((producto, index) => {
+                if(producto.id === id){
+                    carrito.splice(index, 1);
+                }
+            });
+            guardarCarrito();
+            mostrarCarrito();
+        }
+        
+        // Función para guardar el carrito de compra en LocalStorage
+        function guardarCarrito() {
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
+
+        //Función para comfirmar la compra
+        function confirmarCompra() {
+            if (carrito.length != 0) {
+                Swal.fire({
+                    title: "Compra Realizada",
+                    text: "Total de compra: $" + calcularTotal(),
+                    icon: "success",
+                    confirmButtonText: "Continuar"
+                })
+            }
+            carrito.length = 0;
+            //Borramos el carrito de localStorage
+            localStorage.removeItem("carrito");
+            mostrarCarrito();
+        }
+        
+        //Función para vaciar el carrito
+        function vaciarCarrito() {
+            carrito.length = 0;
+            // Borramos el carrito de localStorage
+            localStorage.removeItem("carrito");
+            mostrarCarrito();
+        }
+        
+        botonAgregar.forEach(boton => {
+            boton.addEventListener("click", agregarAlCarrito);
+        });
+        
+        botonConfirmar.addEventListener("click", confirmarCompra);
+        botonVaciarCarrito.addEventListener('click', vaciarCarrito);
+        
+        //Mostrar el carrito cuando se recargue la página
+        window.addEventListener("load", () => {
+            mostrarCarrito();
+        });
+
+        // Agregar event listeners a los botones de suma
+        botonSumar.forEach(boton => {
+            boton.addEventListener("click", () => {
+                const id = parseInt(boton.dataset.id);
+                const inputCantidad = document.querySelector(`.cant[data-id="${id}"]`);
+                const valorActual = parseInt(inputCantidad.value);
+                const valorMaximo = parseInt(inputCantidad.max);
+                if (valorActual < valorMaximo) {
+                    inputCantidad.value = valorActual + 1;
+                }
+            });
+        });
+    
+        // Agregar event listeners a los botones de resta
+        botonRestar.forEach(boton => {
+            boton.addEventListener("click", () => {
+                const id = parseInt(boton.dataset.id);
+                const inputCantidad = document.querySelector(`.cant[data-id="${id}"]`);
+                const valorActual = parseInt(inputCantidad.value);
+                const valorMinimo = parseInt(inputCantidad.min);
+                if (valorActual > valorMinimo) {
+                    inputCantidad.value = valorActual - 1;
+                }
+            });
+        });
+    })

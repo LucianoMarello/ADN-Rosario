@@ -133,55 +133,7 @@
             </div>
             <h1 class="titulo">Destacados</h1>
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="./assets/productos/azucar.jpg" class="card-img-top" alt="azucar">
-                            <div class="card-body">
-                                <h5 class="card-title">Azucar Ledesma</h5>
-                                <p class="card-text">$350 x 1kg</p>
-                                <label for="cantidad1">Cantidad:</label>
-                                <input class="cant" type="number" data-id="1" min="0" value="1">
-                                <a class="btn btn-primary boton-agregar" data-id="1">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="./assets/productos/dulceDeLeche.jpg" class="card-img-top" alt="dulceDeLeche">
-                            <div class="card-body">
-                                <h5 class="card-title">Dulce de Leche</h5>
-                                <p class="card-text">$500 x 454g</p>
-                                <label for="cantidad2">Cantidad:</label>
-                                <input class="cant" type="number" data-id="2" min="0" value="1">
-                                <a class="btn btn-primary boton-agregar" data-id="2">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="./assets/productos/leche.jpg" class="card-img-top" alt="leche">
-                            <div class="card-body">
-                                <h5 class="card-title">Leche en polvo</h5>
-                                <p class="card-text">$400 x 800g</p>
-                                <label for="cantidad3">Cantidad:</label>
-                                <input class="cant" type="number" data-id="3" min="0" value="1">
-                                <a class="btn btn-primary boton-agregar" data-id="3">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="./assets/productos/yerba.jpg" class="card-img-top" alt="yerba">
-                            <div class="card-body">
-                                <h5 class="card-title">Yerba Antiácida</h5>
-                                <p class="card-text ">$1000 x 1kg</p>
-                                <label for="cantidad4">Cantidad:</label>
-                                <input class="cant" type="number" data-id="4" min="0" value="1">
-                                <a class="btn btn-primary boton-agregar" data-id="4">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+                <div id="destacados" class="row">
                 </div>
             </div>
             <!-- Seccion del carrito -->
@@ -190,12 +142,11 @@
                 <ul id="lista-carrito">
                 </ul>
                 <p>Total: <span id="total-carrito">0</span></p>
-                <button id="boton-confirmar"> Confirmar compra </button>
-                <button id="vaciar-carrito"> Vaciar Carrito </button>
+                <button type="button" class="btn btn-success" id="boton-confirmar"> Confirmar compra </button>
+                <button type="button" class="btn btn-danger" id="vaciar-carrito"> Vaciar Carrito </button>
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <hr class="barra">
         <div class="pie">

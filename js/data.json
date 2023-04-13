@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "Azucar Ledesma",
+        "precio": 350,
+        "cantidad": 0,
+        "img": "./assets/productos/azucar.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Dulce de leche",
+        "precio": 500,
+        "cantidad": 0,
+        "img": "./assets/productos/dulceDeLeche.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Leche en polvo",
+        "precio": 400,
+        "cantidad": 0,
+        "img": "./assets/productos/leche.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Yerba Antiácida",
+        "precio": 1000,
+        "cantidad": 0,
+        "img": "./assets/productos/yerba.jpg"
+    }
+]
