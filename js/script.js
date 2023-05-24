@@ -8,6 +8,23 @@ const totalCarrito = document.getElementById("total-carrito");
 const botonConfirmar = document.getElementById("boton-confirmar");
 const botonVaciarCarrito = document.getElementById("vaciar-carrito");
 
+//Menu Carrito
+const carritoToggle = document.querySelector(".carrito-toggle");
+const carritoContenido = document.querySelector(".carrito");
+//Abrir o cerrar carrito a partir del botón carrito
+carritoToggle.addEventListener("click", () => {
+    carritoContenido.classList.toggle("show");
+    carritoToggle.classList.toggle("active")
+});
+// Cerrar el menú desplegable al hacer clic fuera de él
+document.addEventListener("click", (event) => {
+    const targetElement = event.target;
+    if (!carritoContenido.contains(targetElement) && !carritoToggle.contains(targetElement)) {
+        carritoContenido.classList.remove("show");
+        carritoToggle.classList.remove("active");
+    }
+});
+
 //Fetch para obtener los datos del JSON local
 fetch("./js/data.json")
     .then(response => response.json())
@@ -41,7 +58,7 @@ fetch("./js/data.json")
         const botonSumar = document.querySelectorAll(".boton-sumar");
         const botonRestar = document.querySelectorAll(".boton-restar");
 
-        
+
         //Función para mostrar el contenido del carrito
         function mostrarCarrito() {
             let htmlCarrito = "";
@@ -87,17 +104,17 @@ fetch("./js/data.json")
         }
 
         //Función para eliminar productos del carrito
-        function eliminarProducto(event){
+        function eliminarProducto(event) {
             const id = parseInt(event.target.dataset.id);
             carrito.forEach((producto, index) => {
-                if(producto.id === id){
+                if (producto.id === id) {
                     carrito.splice(index, 1);
                 }
             });
             guardarCarrito();
             mostrarCarrito();
         }
-        
+
         // Función para guardar el carrito de compra en LocalStorage
         function guardarCarrito() {
             localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -118,7 +135,7 @@ fetch("./js/data.json")
             localStorage.removeItem("carrito");
             mostrarCarrito();
         }
-        
+
         //Función para vaciar el carrito
         function vaciarCarrito() {
             carrito.length = 0;
@@ -126,14 +143,14 @@ fetch("./js/data.json")
             localStorage.removeItem("carrito");
             mostrarCarrito();
         }
-        
+
         botonAgregar.forEach(boton => {
             boton.addEventListener("click", agregarAlCarrito);
         });
-        
+
         botonConfirmar.addEventListener("click", confirmarCompra);
         botonVaciarCarrito.addEventListener('click', vaciarCarrito);
-        
+
         //Mostrar el carrito cuando se recargue la página
         window.addEventListener("load", () => {
             mostrarCarrito();
@@ -151,7 +168,7 @@ fetch("./js/data.json")
                 }
             });
         });
-    
+
         // Agregar event listeners a los botones de resta
         botonRestar.forEach(boton => {
             boton.addEventListener("click", () => {

@@ -143,18 +143,28 @@
         width: 100%;
         margin: 0rem 0rem;
     }
-
-    #carrito {
-        text-align: center;
-        margin: 6%;
-    }
 }
 
 .cant {
     width: 4rem;
 }
 
-#carrito {
-    margin-left: 6%;
-    margin-top: 2rem;
+.carrito {
+    display: block;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: $fondo;
+    padding: 1rem;
+    border: 0.1rem solid #ccc;
+    width: 25rem;
+    height: 100%;
+    transition: right 0.5s ease;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5)
+}
+
+.show {
+    display: block;
+    right: 0;
 }
