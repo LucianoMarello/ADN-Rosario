@@ -8,14 +8,32 @@ const totalCarrito = document.getElementById("total-carrito");
 const botonConfirmar = document.getElementById("boton-confirmar");
 const botonVaciarCarrito = document.getElementById("vaciar-carrito");
 
+//Buscador
+/* const buscador = document.querySelectorAll(".buscador");
+const seccionesProductos = document.querySelectorAll(".seccionesBuscadas");
+buscador.addEventListener("input", () => {
+    const searchTerm = buscador.value.toLowerCase();
+    //Event listener para redirigir al hacer click en el enlace de la seccion
+    for (let i = 0; i < seccionesProductos.length; i++){
+        seccionesProductos[i].addEventListener("click", (event) => {
+            event.preventDefault(); //Evitar el comportamiento predeterminado del enlace
+            const href = this.getAttribute("href");
+            window.location.href = href; //Redirecciona a la ubicación de la sección
+        })
+    }
+}) */
+
+
 //Menu Carrito
 const carritoToggle = document.querySelector(".carrito-toggle");
 const carritoContenido = document.querySelector(".carrito");
+
 //Abrir o cerrar carrito a partir del botón carrito
 carritoToggle.addEventListener("click", () => {
     carritoContenido.classList.toggle("show");
     carritoToggle.classList.toggle("active")
 });
+
 // Cerrar el menú desplegable al hacer clic fuera de él
 document.addEventListener("click", (event) => {
     const targetElement = event.target;
@@ -95,8 +113,22 @@ fetch("./js/data.json")
                 const productoEnCarrito = carrito.find(producto => producto.id === id);
                 if (productoEnCarrito) {
                     productoEnCarrito.cantidad = productoEncontrado.cantidad;
+                    Toastify({
+                        text: `Se agregaron ${productoEncontrado.cantidad}kg de ${productoEncontrado.nombre}`,
+                        duration: 3000,
+                        close: true,
+                    })
                 } else if (cantProductos[id - 1].value != 0) {
                     carrito.push(productoEncontrado);
+                    Toastify({
+                        text: `Se agregaron ${productoEncontrado.cantidad}kg de ${productoEncontrado.nombre} al carrito`,
+                        duration: 3000,
+                        destination: "https://github.com/apvarun/toastify-js",
+                        newWindow: true,
+                        close: true,
+                        stopOnFocus: true, // Prevents dismissing of toast on hover
+                        onClick: function () { } // Callback after click
+                    }).showToast();
                 }
             }
             mostrarCarrito();
@@ -120,7 +152,7 @@ fetch("./js/data.json")
             localStorage.setItem("carrito", JSON.stringify(carrito));
         }
 
-        //Función para comfirmar la compra
+        //Función para confirmar la compra
         function confirmarCompra() {
             if (carrito.length != 0) {
                 Swal.fire({
@@ -142,6 +174,12 @@ fetch("./js/data.json")
             // Borramos el carrito de localStorage
             localStorage.removeItem("carrito");
             mostrarCarrito();
+        }
+
+        //Función para abrir menu carrito
+        function abrirCarrito() {
+            carritoContenido.classList.toggle("show");
+            carritoToggle.classList.toggle("active");
         }
 
         botonAgregar.forEach(boton => {
