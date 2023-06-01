@@ -28,11 +28,14 @@ buscador.addEventListener("input", () => {
 const carritoToggle = document.querySelector(".carrito-toggle");
 const carritoContenido = document.querySelector(".carrito");
 
-//Abrir o cerrar carrito a partir del botón carrito
-carritoToggle.addEventListener("click", () => {
+//Función para abrir menu carrito
+function abrirCarrito() {
     carritoContenido.classList.toggle("show");
-    carritoToggle.classList.toggle("active")
-});
+    carritoToggle.classList.toggle("active");
+}
+
+//Abrir o cerrar carrito a partir del botón carrito
+carritoToggle.addEventListener("click", abrirCarrito);
 
 // Cerrar el menú desplegable al hacer clic fuera de él
 document.addEventListener("click", (event) => {
@@ -108,27 +111,21 @@ fetch("./js/data.json")
             const boton = evento.target;
             const id = parseInt(boton.dataset.id);
             const productoEncontrado = productos.find(producto => producto.id === id);
-            if (productoEncontrado) {
-                productoEncontrado.cantidad = cantProductos[id - 1].value;
+            if(productoEncontrado){
+                const cantidadVieja = productoEncontrado.cantidad;
+                const cantidadNueva = parseInt(cantProductos[id-1].value)
+                productoEncontrado.cantidad = (cantidadVieja + cantidadNueva);
+                Toastify({
+                    text: `Se agregaron ${cantidadNueva}kg de ${productoEncontrado.nombre} al carrito.\n
+                    Total: ${cantidadNueva} x $${productoEncontrado.precio} = $${(cantidadNueva * productoEncontrado.precio)}`,
+                    duration: 2000,
+                    position: "left",
+                    stopOnFocus: true,
+                    onClick: abrirCarrito
+                }).showToast();
                 const productoEnCarrito = carrito.find(producto => producto.id === id);
-                if (productoEnCarrito) {
-                    productoEnCarrito.cantidad = productoEncontrado.cantidad;
-                    Toastify({
-                        text: `Se agregaron ${productoEncontrado.cantidad}kg de ${productoEncontrado.nombre}`,
-                        duration: 3000,
-                        close: true,
-                    })
-                } else if (cantProductos[id - 1].value != 0) {
+                if(!(productoEnCarrito)){
                     carrito.push(productoEncontrado);
-                    Toastify({
-                        text: `Se agregaron ${productoEncontrado.cantidad}kg de ${productoEncontrado.nombre} al carrito`,
-                        duration: 3000,
-                        destination: "https://github.com/apvarun/toastify-js",
-                        newWindow: true,
-                        close: true,
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        onClick: function () { } // Callback after click
-                    }).showToast();
                 }
             }
             mostrarCarrito();
@@ -174,12 +171,6 @@ fetch("./js/data.json")
             // Borramos el carrito de localStorage
             localStorage.removeItem("carrito");
             mostrarCarrito();
-        }
-
-        //Función para abrir menu carrito
-        function abrirCarrito() {
-            carritoContenido.classList.toggle("show");
-            carritoToggle.classList.toggle("active");
         }
 
         botonAgregar.forEach(boton => {
