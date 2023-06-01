@@ -118,7 +118,7 @@ fetch("./js/data.json")
                 Toastify({
                     text: `Se agregaron ${cantidadNueva}kg de ${productoEncontrado.nombre} al carrito.\n
                     Total: ${cantidadNueva} x $${productoEncontrado.precio} = $${(cantidadNueva * productoEncontrado.precio)}`,
-                    duration: 2000,
+                    duration: 3000,
                     position: "left",
                     stopOnFocus: true,
                     onClick: abrirCarrito
