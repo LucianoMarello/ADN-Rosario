@@ -37,15 +37,6 @@ function abrirCarrito() {
 //Abrir o cerrar carrito a partir del botón carrito
 carritoToggle.addEventListener("click", abrirCarrito);
 
-// Cerrar el menú desplegable al hacer clic fuera de él
-document.addEventListener("click", (event) => {
-    const targetElement = event.target;
-    if (!carritoContenido.contains(targetElement) && !carritoToggle.contains(targetElement)) {
-        carritoContenido.classList.remove("show");
-        carritoToggle.classList.remove("active");
-    }
-});
-
 //Fetch para obtener los datos del JSON local
 fetch("./js/data.json")
     .then(response => response.json())
@@ -111,9 +102,9 @@ fetch("./js/data.json")
             const boton = evento.target;
             const id = parseInt(boton.dataset.id);
             const productoEncontrado = productos.find(producto => producto.id === id);
-            if(productoEncontrado){
+            if (productoEncontrado) {
                 const cantidadVieja = productoEncontrado.cantidad;
-                const cantidadNueva = parseInt(cantProductos[id-1].value)
+                const cantidadNueva = parseInt(cantProductos[id - 1].value)
                 productoEncontrado.cantidad = (cantidadVieja + cantidadNueva);
                 Toastify({
                     text: `Se agregaron ${cantidadNueva}kg de ${productoEncontrado.nombre} al carrito.\n
@@ -124,7 +115,7 @@ fetch("./js/data.json")
                     onClick: abrirCarrito
                 }).showToast();
                 const productoEnCarrito = carrito.find(producto => producto.id === id);
-                if(!(productoEnCarrito)){
+                if (!(productoEnCarrito)) {
                     carrito.push(productoEncontrado);
                 }
             }
@@ -138,6 +129,7 @@ fetch("./js/data.json")
             carrito.forEach((producto, index) => {
                 if (producto.id === id) {
                     carrito.splice(index, 1);
+                    producto.cantidad=0;
                 }
             });
             guardarCarrito();
@@ -162,6 +154,9 @@ fetch("./js/data.json")
             carrito.length = 0;
             //Borramos el carrito de localStorage
             localStorage.removeItem("carrito");
+            productos.forEach(prod => {
+                prod.cantidad = 0;
+            })
             mostrarCarrito();
         }
 
@@ -170,6 +165,9 @@ fetch("./js/data.json")
             carrito.length = 0;
             // Borramos el carrito de localStorage
             localStorage.removeItem("carrito");
+            productos.forEach(prod => {
+                prod.cantidad = 0;
+            })
             mostrarCarrito();
         }
 
