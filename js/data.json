@@ -1,30 +1,30 @@
 [
-    {
-        "id": 1,
-        "nombre": "Azucar Ledesma",
-        "precio": 350,
-        "cantidad": 0,
-        "img": "./assets/productos/azucar.jpg"
-    },
-    {
-        "id": 2,
-        "nombre": "Dulce de leche",
-        "precio": 500,
-        "cantidad": 0,
-        "img": "./assets/productos/dulceDeLeche.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Leche en polvo",
-        "precio": 400,
-        "cantidad": 0,
-        "img": "./assets/productos/leche.jpg"
-    },
-    {
-        "id": 4,
-        "nombre": "Yerba Antiácida",
-        "precio": 1000,
-        "cantidad": 0,
-        "img": "./assets/productos/yerba.jpg"
-    }
+  {
+    "id": 1,
+    "nombre": "Remera",
+    "precio": 5500,
+    "cantidad": 0,
+    "img": "./assets/destacados/remera.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Sueter",
+    "precio": 8000,
+    "cantidad": 0,
+    "img": "./assets/destacados/sueter.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Pantalon",
+    "precio": 9500,
+    "cantidad": 0,
+    "img": "./assets/destacados/pantalon.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Musculosa",
+    "precio": 5000,
+    "cantidad": 0,
+    "img": "./assets/destacados/musculosa.jpg"
+  }
 ]

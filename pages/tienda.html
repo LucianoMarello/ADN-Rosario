@@ -1,443 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta
+      name="description"
+      content="Comprá productos por internet. Tenemos remeras, pantalones, abrigos y más. Hacé tu pedido y pagalo online."
+    />
+    <meta
+      name="keywords"
+      content="TIENDA, ROPA, URBANA, MUJER, SUETER, SHOPPING, SHOP, FASHION, STORE"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda | Fashion Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../scss/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/storeLogo.jpg"
+      type="image/x-icon"
+    />
+  </head>
 
-<head>
-    <meta name="description" content="Comprá productos por internet. Tenemos alimentos naturales, despensa y más. Hacé tu pedido y pagalo online.">
-    <meta name="keywords" content="TIENDA, PRODUCTO, ALMACEN, DIETETICA, ORGANICO, ROSARIO, NATURAL">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda | ADN Rosario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="../scss/style.css">
-    <link rel="shortcut icon" href="../assets/logoADN.jpg" type="image/x-icon">
-</head>
-
-<body class="body">
+  <body class="body">
     <header class="header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html">
-                    <img class="imgLogo" height="120rem" src="../assets/logoADN.jpg" alt="Logo ADN">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              class="imgLogo"
+              height="120rem"
+              src="../assets/storeLogo.jpg"
+              alt="Logo Fashion Store"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./tienda.html">Tienda</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Mi Cuenta
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./tienda.html">Tienda</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Mi Cuenta
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./iniciarSesion.html">Iniciar Sesión</a></li>
-                                <li><a class="dropdown-item" href="./registrarse.html">Crear Cuenta</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contactanos.html">Contactanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link carrito-toggle" href="#">Carrito</a>
-                            <div class="carrito"> <!-- Menu desplegable carrito -->
-                                <h2>Carrito</h2>
-                                <ul id="lista-carrito">
-                                </ul>
-                                <p>Total: <span id="total-carrito">0</span></p>
-                                <button type="button" class="btn btn-success" id="boton-confirmar"> Confirmar compra
-                                </button>
-                                <button type="button" class="btn btn-danger" id="vaciar-carrito"> Vaciar Carrito
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2 buscador" type="search" placeholder="Buscar"
-                            aria-label="Search">
-                    </form>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./iniciarSesion.html"
+                      >Iniciar Sesión</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./registrarse.html"
+                      >Crear Cuenta</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contactanos.html">Contactanos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link carrito-toggle" href="#">Carrito</a>
+                <div class="carrito">
+                  <!-- Menu desplegable carrito -->
+                  <h2>Carrito</h2>
+                  <ul id="lista-carrito"></ul>
+                  <p>Total: <span id="total-carrito">0</span></p>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="boton-confirmar"
+                  >
+                    Confirmar compra
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="vaciar-carrito"
+                  >
+                    Vaciar Carrito
+                  </button>
                 </div>
-            </div>
-        </nav>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2 buscador"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <div>
-            <nav>
-                <ul class="nav justify-content-center segundoNav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#destacados">Destacados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#novedades">Novedades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#mixes">Mixes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#arroz_legumbres">Arroz</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#arroz_legumbres">Legumbres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#condimentos">Condimentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#frutosSecos">Frutos Secos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html#semillas">Semillas</a>
-                    </li>
-                </ul>
-            </nav>
+      <div>
+        <nav>
+          <ul class="nav justify-content-center segundoNav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Novedades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ofertas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Remeras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pantalones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Abrigos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calzados</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <h1 class="titulo">Tienda</h1>
+      <section>
+        <div class="container">
+          <h2 id="destacados" class="subtitulo seccionesBuscadas">
+            Destacados
+          </h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/azucar.jpg"
+                  class="card-img-top"
+                  alt="azucar"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Azucar Ledesma</h5>
+                  <p class="card-text">$350 x 1kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/dulceDeLeche.jpg"
+                  class="card-img-top"
+                  alt="dulceDeLeche"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Dulce de Leche</h5>
+                  <p class="card-text">$500 x 454g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/leche.jpg"
+                  class="card-img-top"
+                  alt="leche"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Leche en polvo</h5>
+                  <p class="card-text">$400 x 800g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/yerba.jpg"
+                  class="card-img-top"
+                  alt="yerba"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Yerba Antiácida</h5>
+                  <p class="card-text">$1000 x 1kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h1 class="titulo">Tienda</h1>
-        <section>
-            <div class="container">
-                <h2 id="destacados" class="subtitulo seccionesBuscadas">Destacados</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/azucar.jpg" class="card-img-top" alt="azucar">
-                            <div class="card-body">
-                                <h5 class="card-title">Azucar Ledesma</h5>
-                                <p class="card-text">$350 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/dulceDeLeche.jpg" class="card-img-top" alt="dulceDeLeche">
-                            <div class="card-body">
-                                <h5 class="card-title">Dulce de Leche</h5>
-                                <p class="card-text">$500 x 454g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/leche.jpg" class="card-img-top" alt="leche">
-                            <div class="card-body">
-                                <h5 class="card-title">Leche en polvo</h5>
-                                <p class="card-text">$400 x 800g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/yerba.jpg" class="card-img-top" alt="yerba">
-                            <div class="card-body">
-                                <h5 class="card-title">Yerba Antiácida</h5>
-                                <p class="card-text">$1000 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="container">
+          <h2 id="novedades" class="subtitulo seccionesBuscadas">Novedades</h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/mermelada.jpg"
+                  class="card-img-top"
+                  alt="mermelada"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mermelada</h5>
+                  <p class="card-text">$540 x 450kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-            <div class="container">
-                <h2 id="novedades" class="subtitulo seccionesBuscadas">Novedades</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/mermelada.jpg" class="card-img-top" alt="mermelada">
-                            <div class="card-body">
-                                <h5 class="card-title">Mermelada</h5>
-                                <p class="card-text">$540 x 450kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/gaseosa.jpg" class="card-img-top" alt="gaseosa">
-                            <div class="card-body">
-                                <h5 class="card-title">Paso de los toros</h5>
-                                <p class="card-text">$180 x 1,5l</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/barrasDeCereal.jpg" class="card-img-top" alt="barras de cereal">
-                            <div class="card-body">
-                                <h5 class="card-title">Cereal Mix</h5>
-                                <p class="card-text">$140 x 26g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/oldPrince.jpg" class="card-img-top" alt="oldPrince">
-                            <div class="card-body">
-                                <h5 class="card-title">Old Prince Balanceado</h5>
-                                <p class="card-text">$1899 x 3kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/gaseosa.jpg"
+                  class="card-img-top"
+                  alt="gaseosa"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Paso de los toros</h5>
+                  <p class="card-text">$180 x 1,5l</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-            <div class="container">
-                <h2 id="mixes" class="subtitulo seccionesBuscadas">Mixes</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/mixEuropeo.jpg" class="card-img-top" alt="mixEuropeo">
-                            <div class="card-body">
-                                <h5 class="card-title">Mix Europeo Especial</h5>
-                                <p class="card-text">$1190 x 1/2kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/mixGranola.jpg" class="card-img-top" alt="mixGranola">
-                            <div class="card-body">
-                                <h5 class="card-title">Granola con Coco</h5>
-                                <p class="card-text">$610 x 1/2kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/mixMexicano.jpg" class="card-img-top" alt="mixMexicano">
-                            <div class="card-body">
-                                <h5 class="card-title">Mix Mexicano</h5>
-                                <p class="card-text">$920 x 1/2kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/mixTropical.jpg" class="card-img-top" alt="mixTropical">
-                            <div class="card-body">
-                                <h5 class="card-title">Mix Tropical sin maní</h5>
-                                <p class="card-text">$830 x 1/2kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/barrasDeCereal.jpg"
+                  class="card-img-top"
+                  alt="barras de cereal"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cereal Mix</h5>
+                  <p class="card-text">$140 x 26g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-            <div class="container">
-                <h2 id="arroz_legumbres" class="subtitulo seccionesBuscadas">Arroz y Legumbres</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/garbanzos.jpg" class="card-img-top" alt="garbanzos">
-                            <div class="card-body">
-                                <h5 class="card-title">Garbanzos</h5>
-                                <p class="card-text">$370 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/arroz.jpg" class="card-img-top" alt="arroz">
-                            <div class="card-body">
-                                <h5 class="card-title">Arroz</h5>
-                                <p class="card-text">$220 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/lentejas.jpg" class="card-img-top" alt="lentejas">
-                            <div class="card-body">
-                                <h5 class="card-title">Lentejas</h5>
-                                <p class="card-text">$555 x kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/porotos.jpg" class="card-img-top" alt="porotos">
-                            <div class="card-body">
-                                <h5 class="card-title">Porotos</h5>
-                                <p class="card-text">$380 x 1kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/oldPrince.jpg"
+                  class="card-img-top"
+                  alt="oldPrince"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Old Prince Balanceado</h5>
+                  <p class="card-text">$1899 x 3kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-            <div class="container">
-                <h2 id="condimentos" class="subtitulo seccionesBuscadas">Condimentos</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/ajiMolido.jpg" class="card-img-top" alt="ajiMolido">
-                            <div class="card-body">
-                                <h5 class="card-title">Aji molido</h5>
-                                <p class="card-text">$155 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/albahaca.jpg" class="card-img-top" alt="albahaca">
-                            <div class="card-body">
-                                <h5 class="card-title">Albahaca</h5>
-                                <p class="card-text">$250 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/comino.jpg" class="card-img-top" alt="comino">
-                            <div class="card-body">
-                                <h5 class="card-title">Comino</h5>
-                                <p class="card-text">$305 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/canelaPolvo.jpg" class="card-img-top" alt="canela">
-                            <div class="card-body">
-                                <h5 class="card-title">Canela</h5>
-                                <p class="card-text">$305 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 id="mixes" class="subtitulo seccionesBuscadas">Mixes</h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/mixEuropeo.jpg"
+                  class="card-img-top"
+                  alt="mixEuropeo"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mix Europeo Especial</h5>
+                  <p class="card-text">$1190 x 1/2kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-            <div class="container">
-                <h2 id="frutosSecos" class="subtitulo seccionesBuscadas">Frutos secos</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/almendra.jpg" class="card-img-top" alt="almendras">
-                            <div class="card-body">
-                                <h5 class="card-title">Almendras</h5>
-                                <p class="card-text">$855 x 1/4kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/avellana.jpg" class="card-img-top" alt="avellana">
-                            <div class="card-body">
-                                <h5 class="card-title">Avellanas</h5>
-                                <p class="card-text">$1320 x 1/4kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/pistacho.jpg" class="card-img-top" alt="pistacho">
-                            <div class="card-body">
-                                <h5 class="card-title">Pistacho</h5>
-                                <p class="card-text">$1125 x 1/4kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/nueces.jpg" class="card-img-top" alt="nueces">
-                            <div class="card-body">
-                                <h5 class="card-title">Nueces</h5>
-                                <p class="card-text">$775 x 1/2kg</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/mixGranola.jpg"
+                  class="card-img-top"
+                  alt="mixGranola"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Granola con Coco</h5>
+                  <p class="card-text">$610 x 1/2kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-            <div class="container">
-                <h2 id="semillas" class="subtitulo seccionesBuscadas">Semillas</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/semillasChia.jpg" class="card-img-top" alt="semillasChia">
-                            <div class="card-body">
-                                <h5 class="card-title">Semillas de Chía</h5>
-                                <p class="card-text">$230 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/semillasGirasol.jpg" class="card-img-top" alt="semillasGirasol">
-                            <div class="card-body">
-                                <h5 class="card-title">Semillas de Girasol</h5>
-                                <p class="card-text">$105 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/semillasLino.jpg" class="card-img-top" alt="semillasLino">
-                            <div class="card-body">
-                                <h5 class="card-title">Semillas de Lino</h5>
-                                <p class="card-text">$70 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="card" style="width: auto;">
-                            <img src="../assets/productos/semillasSesamo.jpg" class="card-img-top" alt="semillasSésamo">
-                            <div class="card-body">
-                                <h5 class="card-title">Semillas de Sésamo</h5>
-                                <p class="card-text">$180 x 100g</p>
-                                <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/mixMexicano.jpg"
+                  class="card-img-top"
+                  alt="mixMexicano"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mix Mexicano</h5>
+                  <p class="card-text">$920 x 1/2kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/mixTropical.jpg"
+                  class="card-img-top"
+                  alt="mixTropical"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mix Tropical sin maní</h5>
+                  <p class="card-text">$830 x 1/2kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 id="arroz_legumbres" class="subtitulo seccionesBuscadas">
+            Arroz y Legumbres
+          </h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/garbanzos.jpg"
+                  class="card-img-top"
+                  alt="garbanzos"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Garbanzos</h5>
+                  <p class="card-text">$370 x 1kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/arroz.jpg"
+                  class="card-img-top"
+                  alt="arroz"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Arroz</h5>
+                  <p class="card-text">$220 x 1kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/lentejas.jpg"
+                  class="card-img-top"
+                  alt="lentejas"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Lentejas</h5>
+                  <p class="card-text">$555 x kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/porotos.jpg"
+                  class="card-img-top"
+                  alt="porotos"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Porotos</h5>
+                  <p class="card-text">$380 x 1kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 id="condimentos" class="subtitulo seccionesBuscadas">
+            Condimentos
+          </h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/ajiMolido.jpg"
+                  class="card-img-top"
+                  alt="ajiMolido"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Aji molido</h5>
+                  <p class="card-text">$155 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/albahaca.jpg"
+                  class="card-img-top"
+                  alt="albahaca"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Albahaca</h5>
+                  <p class="card-text">$250 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/comino.jpg"
+                  class="card-img-top"
+                  alt="comino"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Comino</h5>
+                  <p class="card-text">$305 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/canelaPolvo.jpg"
+                  class="card-img-top"
+                  alt="canela"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Canela</h5>
+                  <p class="card-text">$305 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 id="frutosSecos" class="subtitulo seccionesBuscadas">
+            Frutos secos
+          </h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/almendra.jpg"
+                  class="card-img-top"
+                  alt="almendras"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Almendras</h5>
+                  <p class="card-text">$855 x 1/4kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/avellana.jpg"
+                  class="card-img-top"
+                  alt="avellana"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Avellanas</h5>
+                  <p class="card-text">$1320 x 1/4kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/pistacho.jpg"
+                  class="card-img-top"
+                  alt="pistacho"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Pistacho</h5>
+                  <p class="card-text">$1125 x 1/4kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/nueces.jpg"
+                  class="card-img-top"
+                  alt="nueces"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Nueces</h5>
+                  <p class="card-text">$775 x 1/2kg</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2 id="semillas" class="subtitulo seccionesBuscadas">Semillas</h2>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/semillasChia.jpg"
+                  class="card-img-top"
+                  alt="semillasChia"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Semillas de Chía</h5>
+                  <p class="card-text">$230 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/semillasGirasol.jpg"
+                  class="card-img-top"
+                  alt="semillasGirasol"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Semillas de Girasol</h5>
+                  <p class="card-text">$105 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/semillasLino.jpg"
+                  class="card-img-top"
+                  alt="semillasLino"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Semillas de Lino</h5>
+                  <p class="card-text">$70 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="card" style="width: auto">
+                <img
+                  src="../assets/productos/semillasSesamo.jpg"
+                  class="card-img-top"
+                  alt="semillasSésamo"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Semillas de Sésamo</h5>
+                  <p class="card-text">$180 x 100g</p>
+                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <hr class="barra">
-        <div class="pie">
-            <p>Copyright ADN Almacén Dietético Natural Rosario - 2022. Todos los derechos reservados.</p>
-            <ul class="iconos">
-                <li><a href="https://www.instagram.com/adnalmacendietetico/"><img src="../assets/instagram.svg" alt="Logo Instagram"></a></li>
-                <li><a href="https://web.whatsapp.com/"><img src="../assets/whatsapp.svg" alt="Logo Whatsapp"></a></li>
-                <li><a href="tel:+543411234567"><img src="../assets/phone-solid.svg" alt="Celular"></a></li>
-                <li><a href="https://mail.google.com/"><img src="../assets/envelope-regular.svg" alt="E-mail"></a></li>
-            </ul>
-        </div>
+      <hr class="barra" />
+      <div class="pie">
+        <p>
+          Copyright ADN Almacén Dietético Natural Rosario - 2022. Todos los
+          derechos reservados.
+        </p>
+        <ul class="iconos">
+          <li>
+            <a href="https://www.instagram.com/adnalmacendietetico/"
+              ><img
+                src="../assets/contactos/instagram.svg"
+                alt="Logo Instagram"
+            /></a>
+          </li>
+          <li>
+            <a href="https://web.whatsapp.com/"
+              ><img src="../assets/contactos/whatsapp.svg" alt="Logo Whatsapp"
+            /></a>
+          </li>
+          <li>
+            <a href="tel:+543411234567"
+              ><img src="../assets/contactos/phone-solid.svg" alt="Celular"
+            /></a>
+          </li>
+          <li>
+            <a href="https://mail.google.com/"
+              ><img src="../assets/contactos/envelope-regular.svg" alt="E-mail"
+            /></a>
+          </li>
+        </ul>
+      </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

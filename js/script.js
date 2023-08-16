@@ -51,7 +51,7 @@ fetch("./js/data.json")
                         <img src="${element.img}" class="card-img-top" alt="${element.nombre}">
                         <div class="card-body">
                             <h5 class="card-title">${element.nombre}</h5>
-                            <p class="card-text">$ ${element.precio} x 1kg</p>
+                            <p class="card-text">$ ${element.precio} por Unidad</p>
                             <div class="input-group mb-3">
                                 <button type="button" class="boton-restar btn btn-outline-secondary" data-id="${element.id}"> - </button>
                                 <input class="cant form-control text-center" type="number" data-id="${element.id}" min="1" max="10" value="1">
@@ -76,7 +76,7 @@ fetch("./js/data.json")
             let htmlCarrito = "";
             for (const producto of carrito) {
                 htmlCarrito += `<li>
-                ${producto.nombre} x ${producto.cantidad} kg = $${producto.precio * producto.cantidad}
+                ${producto.nombre} x ${producto.cantidad} unidad/es = $${producto.precio * producto.cantidad}
                 <button type="button" class="btn-close" aria-label="Close" data-id="${producto.id}"></button>
                 </li>`;
             }
@@ -107,7 +107,7 @@ fetch("./js/data.json")
                 const cantidadNueva = parseInt(cantProductos[id - 1].value)
                 productoEncontrado.cantidad = (cantidadVieja + cantidadNueva);
                 Toastify({
-                    text: `Se agregaron ${cantidadNueva}kg de ${productoEncontrado.nombre} al carrito.\n
+                    text: `Se agregó ${cantidadNueva} unidad/es de ${productoEncontrado.nombre} al carrito.\n
                     Total: ${cantidadNueva} x $${productoEncontrado.precio} = $${(cantidadNueva * productoEncontrado.precio)}`,
                     duration: 3000,
                     position: "left",
@@ -129,7 +129,7 @@ fetch("./js/data.json")
             carrito.forEach((producto, index) => {
                 if (producto.id === id) {
                     carrito.splice(index, 1);
-                    producto.cantidad=0;
+                    producto.cantidad = 0;
                 }
             });
             guardarCarrito();

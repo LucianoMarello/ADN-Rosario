@@ -1,173 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta name="description"
-        content="Tienda Online de alimentos naturales, dietéticos, productos orgánicos y cosmética natural.">
-    <meta name="keywords" content="TIENDA, PRODUCTO, ALMACEN, DIETETICA, ORGANICO, ROSARIO, NATURAL">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | ADN Almacén Dietético Natural</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="./scss/style.css">
-    <link rel="shortcut icon" href="./assets/logoADN.jpg" type="image/x-icon">
+  <head>
+    <meta
+      name="description"
+      content="Tienda de ropa urbana, fashion, moderna, etc..."
+    />
+    <meta
+      name="keywords"
+      content="TIENDA, ROPA, URBANA, MUJER, SUETER, SHOPPING, SHOP, FASHION, STORE"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio | Fashion Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./scss/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/storeLogo.jpg"
+      type="image/x-icon"
+    />
     <script defer src="./js/script.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-</head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </head>
 
-<body class="body">
+  <body class="body">
     <header class="header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
-                    <img class="imgLogo" height="120rem" src="./assets/logoADN.jpg" alt="Logo ADN">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              class="imgLogo"
+              height="120rem"
+              src="./assets/storeLogo.jpg"
+              alt="Logo Fashion Store"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/tienda.html">Tienda</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Mi Cuenta
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./pages/tienda.html">Tienda</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Mi Cuenta
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./pages/iniciarSesion.html">Iniciar Sesión</a></li>
-                                <li><a class="dropdown-item" href="./pages/registrarse.html">Crear Cuenta</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./pages/contactanos.html">Contactanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link carrito-toggle" href="#">Carrito</a>
-                            <div class="carrito"> <!-- Menu desplegable carrito -->
-                                <h2>Carrito</h2>
-                                <ul id="lista-carrito">
-                                </ul>
-                                <p>Total: <span id="total-carrito">0</span></p>
-                                <button type="button" class="btn btn-success" id="boton-confirmar"> Confirmar compra
-                                </button>
-                                <button type="button" class="btn btn-danger" id="vaciar-carrito"> Vaciar Carrito
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2 buscador" type="search" placeholder="Buscar"
-                            aria-label="Search">
-                    </form>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./pages/iniciarSesion.html"
+                      >Iniciar Sesión</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/registrarse.html"
+                      >Crear Cuenta</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/contactanos.html"
+                  >Contactanos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link carrito-toggle" href="#">Carrito</a>
+                <div class="carrito">
+                  <!-- Menu desplegable carrito -->
+                  <h2>Carrito</h2>
+                  <ul id="lista-carrito"></ul>
+                  <p>Total: <span id="total-carrito">0</span></p>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="boton-confirmar"
+                  >
+                    Confirmar compra
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="vaciar-carrito"
+                  >
+                    Vaciar Carrito
+                  </button>
                 </div>
-            </div>
-        </nav>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2 buscador"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <div>
-            <nav>
-                <ul class="nav justify-content-center segundoNav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#destacados">Destacados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#novedades">Novedades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#mixes">Mixes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#arroz_legumbres">Arroz</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#arroz_legumbres">Legumbres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#condimentos">Condimentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#frutosSecos">Frutos Secos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pages/tienda.html#semillas">Semillas</a>
-                    </li>
-                </ul>
-            </nav>
+      <div>
+        <nav>
+          <ul class="nav justify-content-center segundoNav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Novedades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ofertas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Remeras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pantalones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Abrigos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calzados</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section>
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/slider/slider1.jpg"
+                class="d-block w-100"
+                alt="dietetica"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/slider/slider2.jpg"
+                class="d-block w-100"
+                alt="condimentos"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/slider/slider3.jpg"
+                class="d-block w-100"
+                alt="granos"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <section>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./assets/gente.jpg" class="d-block w-100" alt="dietetica">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assets/condimentos.jpg" class="d-block w-100" alt="condimentos">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assets/granos.jpg" class="d-block w-100" alt="granos">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <h1 class="titulo">Destacados</h1>
-            <div class="container">
-                <div id="destacados" class="row">
-                </div>
-            </div>
-        </section>
+        <h1 class="titulo">Destacados</h1>
+        <div class="container">
+          <div id="destacados" class="row"></div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
-        <hr class="barra">
-        <div class="pie">
-            <p>Copyright ADN Almacén Dietético Natural Rosario - 2022. Todos los derechos reservados.</p>
-            <ul class="iconos">
-                <li><a target="_blank" href="https://www.instagram.com/adnalmacendietetico/"><img
-                            src="./assets/instagram.svg" alt="Logo Instagram"></a></li>
-                <li><a target="_blank" href="https://web.whatsapp.com/"><img src="./assets/whatsapp.svg"
-                            alt="Logo Whatsapp"></a></li>
-                <li><a target="_blank" href="tel:+543411234567"><img src="./assets/phone-solid.svg" alt="Celular"></a>
-                </li>
-                <li><a target="_blank" href="https://mail.google.com/"><img src="./assets/envelope-regular.svg"
-                            alt="E-mail"></a></li>
-            </ul>
-        </div>
+      <hr class="barra" />
+      <div class="pie">
+        <p>
+          Copyright ADN Almacén Dietético Natural Rosario - 2022. Todos los
+          derechos reservados.
+        </p>
+        <ul class="iconos">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/adnalmacendietetico/"
+              ><img src="./assets/contactos/instagram.svg" alt="Logo Instagram"
+            /></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://web.whatsapp.com/"
+              ><img src="./assets/contactos/whatsapp.svg" alt="Logo Whatsapp"
+            /></a>
+          </li>
+          <li>
+            <a target="_blank" href="tel:+543411234567"
+              ><img src="./assets/contactos/phone-solid.svg" alt="Celular"
+            /></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://mail.google.com/"
+              ><img src="./assets/contactos/envelope-regular.svg" alt="E-mail"
+            /></a>
+          </li>
+        </ul>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

@@ -10,11 +10,12 @@
 }
 
 .header {
-  background-color: rgba(255, 166, 0, 0.658);
+  background-color: #a2c0cc;
 }
 
 .imgLogo {
   border-radius: 100%;
+  height: 10rem;
 }
 
 .buscador {
@@ -23,7 +24,8 @@
 }
 
 .segundoNav {
-  background-color: #fee997;
+  background-color: #fed9b4;
+  margin-bottom: 3rem;
 }
 .segundoNav li a {
   color: black;
@@ -33,7 +35,7 @@
 }
 
 .body {
-  background-color: beige;
+  background-color: #fceee0;
 }
 
 .carousel {
@@ -79,7 +81,7 @@
 .footer {
   margin-top: 7rem;
   padding-top: 2rem;
-  background-color: cornflowerblue;
+  background-color: #5b899b;
 }
 
 .input {
@@ -150,7 +152,7 @@
   position: fixed;
   top: 0;
   right: -100%;
-  background-color: beige;
+  background-color: #fceee0;
   padding: 1rem;
   border: 0.1rem solid #ccc;
   width: 25rem;

@@ -2,169 +2,171 @@
 @import "./variables";
 
 .header {
-    background-color: $principal;
+  background-color: $principal;
 }
 
 .imgLogo {
-    border-radius: 100%;
+  border-radius: 100%;
+  height: 10rem;
 }
 
 .buscador {
-    width: 20rem;
-    border-color: $buscador;
+  width: 20rem;
+  border-color: $buscador;
 }
 
 .segundoNav {
-    background-color: $secundario;
+  background-color: $secundario;
+  margin-bottom: 3rem;
 
-    li {
-        a {
-            color: black;
+  li {
+    a {
+      color: black;
 
-            &:hover {
-                color: grey;
-            }
-        }
+      &:hover {
+        color: grey;
+      }
     }
+  }
 }
 
 .body {
-    background-color: $fondo;
+  background-color: $fondo;
 }
 
 .carousel {
-    width: $carrusel;
-    margin: 0rem (100%-$carrusel)/2;
+  width: $carrusel;
+  margin: 0rem (100%-$carrusel)/2;
 }
 
 .titulo {
-    text-align: center;
-    margin-top: 2*$margen;
-    margin-bottom: $margen;
+  text-align: center;
+  margin-top: 2 * $margen;
+  margin-bottom: $margen;
 }
 
 .subtitulo {
-    margin-top: 2*$margen;
-    margin-bottom: $margen;
+  margin-top: 2 * $margen;
+  margin-bottom: $margen;
 }
 
 .barra {
-    width: 90%;
-    margin: 5%;
-    margin-top: 0;
-    margin-bottom: 2%;
+  width: 90%;
+  margin: 5%;
+  margin-top: 0;
+  margin-bottom: 2%;
 }
 
 .pie {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 .iconos {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
 
-    li {
-        img {
-            margin-left: $margen;
-            margin-right: $margen;
-            height: $iconos;
-        }
+  li {
+    img {
+      margin-left: $margen;
+      margin-right: $margen;
+      height: $iconos;
     }
+  }
 }
 
 .footer {
-    margin-top: 7rem;
-    padding-top: 2rem;
-    background-color: $footer;
+  margin-top: 7rem;
+  padding-top: 2rem;
+  background-color: $footer;
 }
 
 .input {
-    margin-top: 0;
-    margin-bottom: $margen;
-    width: 100%;
+  margin-top: 0;
+  margin-bottom: $margen;
+  width: 100%;
 }
 
 .boton {
-    margin-top: $margen;
-    margin-bottom: $margen;
-    width: 100%;
+  margin-top: $margen;
+  margin-bottom: $margen;
+  width: 100%;
 }
 
 .form {
-    margin-left: 25%;
-    margin-right: 25%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .form-check {
-    margin-top: $margen;
+  margin-top: $margen;
 }
 
 .pregunta {
-    text-align: center;
-    padding-bottom: 4rem;
+  text-align: center;
+  padding-bottom: 4rem;
 }
 
 .enviar {
-    width: 50%;
-    margin: 0 25% 0 25%;
+  width: 50%;
+  margin: 0 25% 0 25%;
 }
 
 .card img {
-    scale: 0.8;
-    transition: all 300ms;
+  scale: 0.8;
+  transition: all 300ms;
 
-    &:hover {
-        transform: scale(1.2);
-    }
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
-@media screen and (max-width:991px) {
-    .buscador {
-        width: 14rem;
-    }
+@media screen and (max-width: 991px) {
+  .buscador {
+    width: 14rem;
+  }
 
-    .card {
-        margin-bottom: 1.5rem;
-    }
+  .card {
+    margin-bottom: 1.5rem;
+  }
 
-    .enviar {
-        width: 90%;
-        margin: 0 5%;
-    }
+  .enviar {
+    width: 90%;
+    margin: 0 5%;
+  }
 
-    .form {
-        margin: 5%;
-    }
+  .form {
+    margin: 5%;
+  }
 
-    .carousel {
-        width: 100%;
-        margin: 0rem 0rem;
-    }
+  .carousel {
+    width: 100%;
+    margin: 0rem 0rem;
+  }
 }
 
 .cant {
-    width: 4rem;
+  width: 4rem;
 }
 
 .carrito {
-    display: block;
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background-color: $fondo;
-    padding: 1rem;
-    border: 0.1rem solid #ccc;
-    width: 25rem;
-    height: 100%;
-    transition: right 0.5s ease;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5)
+  display: block;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: $fondo;
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  width: 25rem;
+  height: 100%;
+  transition: right 0.5s ease;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 .show {
-    display: block;
-    right: 0;
+  display: block;
+  right: 0;
 }
